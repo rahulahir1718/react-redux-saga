@@ -1,8 +1,10 @@
 import { ICartProduct} from "../../utils/interfaces/cart-product";
+import { IOptions } from "../../utils/interfaces/options";
 import { ADD_TO_CART_REQUEST, ADD_TO_CART_REQUEST_FAILURE, ADD_TO_CART_REQUEST_SUCCESS, CART_REQUEST, CART_REQUEST_FAILURE, CART_REQUEST_SUCCESS, DELETE_FROM_CART_REQUEST, DELETE_FROM_CART_REQUEST_FAILURE, DELETE_FROM_CART_REQUEST_SUCCESS, EDIT_CART_REQUEST, EDIT_CART_REQUEST_FAILURE, EDIT_CART_REQUEST_SUCCESS } from "./actionTypes";
 
 export interface ICartRequestSuccessPayload{
-  products: ICartProduct[]
+  products: ICartProduct[],
+  totalCount: number
 }
 
 export interface ICartRequestFailurePayload{
@@ -39,6 +41,7 @@ export interface IAddToCartFailure{
 
 export interface ICartRequest {
   type: typeof CART_REQUEST;
+  payload?: ICartRequestPayload
 }
 
 export interface ICartRequestSuccess{
@@ -107,6 +110,10 @@ export interface IEditCartFailurePayload{
 export interface IEditCartFailure{
   type: typeof EDIT_CART_REQUEST_FAILURE,
   payload : IEditCartFailurePayload
+}
+
+export interface ICartRequestPayload {
+  values: IOptions
 }
 
 export type CartActions =

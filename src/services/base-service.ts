@@ -10,9 +10,10 @@ const sendRequest = async (requestConfig: RequestConfig) => {
         throw new Error("Something went wrong..");
     }
 
-    response = await response.json();
+    let headers = response.headers;
+    let data = await response.json();
 
-    return response;
+    return {data, headers};
 };
 
 export default {

@@ -3,13 +3,15 @@ import { ADD_TO_CART_REQUEST, CART_REQUEST, DELETE_FROM_CART_REQUEST, EDIT_CART_
 import cartService from "./service"
 import { addToCartFailure, addToCartSuccess, cartRequestFailure, cartRequestSuccess, deleteFromCartFailure, deleteFromCartSuccess, editCartSuccess, editCartfailure } from "./action";
 
-function* getCartData() : any{
+function* getCartData(action:any) : any{
     try {
-        const response = yield call(cartService.getCart);
+        const response = yield call(cartService.getCart, action.payload ? action.payload.values : null);
+        const totalCount = parseInt(response.headers.get('X-Total-Count'), 10);
 
         yield put(
             cartRequestSuccess({
-                products : response
+                products : response.data,
+                totalCount : totalCount ? totalCount : 0
             })
         );
     } catch (error:any) {
@@ -45,7 +47,7 @@ function* addToCart(action:any) : any
 function* deleteFromCart(action:any) : any{
     try {
         const response = yield call(cartService.deleteFromCart, action.payload.values.id);
-
+        
         yield put(
             deleteFromCartSuccess({
                 message : "Deleted from cart successfully"

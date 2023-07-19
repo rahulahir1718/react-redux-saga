@@ -7,39 +7,17 @@ const initialState = {
   }
 
 const reducer = (state = initialState, action : CartActions) => {
-    if(action.type == CART_REQUEST_SUCCESS){
-        return {...state, cartProducts: action.payload.products, totalProducts : action.payload.products.length}
+    switch(action.type){
+        case CART_REQUEST_SUCCESS : return {...state, cartProducts: action.payload.products, totalProducts : action.payload.products.length, totalCount : action.payload.totalCount}
+        case CART_REQUEST_FAILURE : return state;
+        case ADD_TO_CART_REQUEST_SUCCESS : return state;    
+        case ADD_TO_CART_REQUEST_FAILURE : return state; 
+        case DELETE_FROM_CART_REQUEST_SUCCESS : return state;
+        case DELETE_FROM_CART_REQUEST_FAILURE: return state;  
+        case EDIT_CART_REQUEST_SUCCESS: return state; 
+        case EDIT_CART_REQUEST_FAILURE: return state;   
+        default: return state;               
     }
-
-    if(action.type == CART_REQUEST_FAILURE){
-        return state;
-    }
-
-    if(action.type == ADD_TO_CART_REQUEST_SUCCESS){
-        return state;
-    }
-
-    if(action.type == ADD_TO_CART_REQUEST_FAILURE){
-        return state;
-    }
-
-    if(action.type == DELETE_FROM_CART_REQUEST_SUCCESS){
-        return state;
-    }
-
-    if(action.type == DELETE_FROM_CART_REQUEST_FAILURE){
-        return state;
-    }
-
-    if(action.type == EDIT_CART_REQUEST_SUCCESS){
-        return state;
-    }
-
-    if(action.type == EDIT_CART_REQUEST_FAILURE){
-        return state;
-    }
-
-    return state;
 };
 
 export default reducer

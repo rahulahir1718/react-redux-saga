@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "productName": "TV",
+      "price": 15000,
+      "color": "White",
+      "category": "Home"
+    },
+    {
+      "id": 3,
+      "productName": "AC",
+      "price": 75000,
+      "color": "White",
+      "category": "Home"
+    },
+    {
+      "id": 4,
+      "productName": "Chair",
+      "price": 5000,
+      "color": "Black",
+      "category": "Home"
+    },
+    {
+      "id": 5,
+      "productName": "Laptop",
+      "price": 50000,
+      "color": "Gray",
+      "category": "Lifestyle"
+    },
+    {
+      "id": 6,
+      "productName": "Shoes",
+      "price": 2000,
+      "color": "White",
+      "category": "Footwear"
+    },
+    {
+      "id": 7,
+      "productName": "Washing Machine",
+      "price": 25000,
+      "color": "White",
+      "category": "Home"
+    },
+    {
+      "id": 8,
+      "productName": "DTH",
+      "price": 1500,
+      "color": "Gray",
+      "category": "Home"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productName": "TV",
+      "price": 15000,
+      "color": "White",
+      "category": "Home",
+      "productId": 2,
+      "quantity": 30
+    },
+    {
+      "id": 2,
+      "productName": "Shoes",
+      "price": 2000,
+      "color": "White",
+      "category": "Footwear",
+      "productId": 6,
+      "quantity": 2
+    },
+    {
+      "id": 3,
+      "productName": "AC",
+      "price": 75000,
+      "color": "White",
+      "category": "Home",
+      "productId": 3,
+      "quantity": 3
+    },
+    {
+      "id": 4,
+      "productName": "Chair",
+      "price": 5000,
+      "color": "Black",
+      "category": "Home",
+      "productId": 4,
+      "quantity": 4
+    },
+    {
+      "id": 5,
+      "productName": "Laptop",
+      "price": 50000,
+      "color": "Gray",
+      "category": "Lifestyle",
+      "productId": 5,
+      "quantity": 5
+    }
+  ]
+}

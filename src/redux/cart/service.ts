@@ -3,9 +3,10 @@ import { RequestConfig } from "../../utils/interfaces/request-config";
 
 const baseUrl = "http://localhost:4000";
 
-const getCart = async() => {
+const getCart = async(data?:any) => {
+    
     let requestConfig : RequestConfig = {
-        url : baseUrl + '/cart',
+        url : `${baseUrl}/cart${data && data.sortBy && data.sortBy.length > 0 ? '?_sort=' + data.sortBy + '&_order=' + data.sortOrder + '&' : '?'}${data && data.pageNo ? '_page=' + data.pageNo + '&_limit=' +  data.pageSize: ''}`,
         method: 'GET',
         body: null
     }

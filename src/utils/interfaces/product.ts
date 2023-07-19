@@ -1,6 +1,6 @@
 
 export interface IProduct{
-    id: number,
+    id: number | null,
     productName: string,
     price: number,
     color: string,
